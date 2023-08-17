@@ -20,14 +20,14 @@ Code to generate diagram:
 title Creating new note
 
 note over browser:
-the browser send
+the browser sends
 the data to the server
 end note
 
 browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
 
 note over browser:
-The browser do a 
+The browser does a 
 request to the server
 to get all notes
 end note
@@ -35,7 +35,7 @@ end note
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
 
 note over server:
-the server send a 
+the server sends a 
 HTML document to 
 the browser
 end note
@@ -43,7 +43,7 @@ end note
 server-->browser: HTML-code
 
 note over browser:
-the browser render the HTML document
+the browser renders the HTML document
 received and does requests 
 to get all the needed dependencies
 end note
@@ -61,7 +61,6 @@ end note
 
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 server-->browser: data.json
-
 ```
 
 Diagram:

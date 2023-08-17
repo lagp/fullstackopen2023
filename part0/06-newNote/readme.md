@@ -12,7 +12,7 @@ Code to generate diagram:
 title Creatin a new note in a Single Page Application
 
 note over browser:
-the browser send 
+the browser sends 
 the data to the server
 end note
 

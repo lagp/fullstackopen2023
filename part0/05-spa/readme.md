@@ -12,14 +12,14 @@ Code to generate diagram:
 title Access to Single Page Application
 
 note over browser:
-the browser do a request
+the browser does a request
 for the main application page
 end note
 
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
 
 note over server:
-the serve send a HTML document
+the serve sends a HTML document
 to the browser
 end note
 
