@@ -1,2 +1,3 @@
-# fullstackopen2023
-Deep Dive Into Modern Web Development
+# FullStack Open
+
+Deep Dive Into Modern Web Development Excercises
