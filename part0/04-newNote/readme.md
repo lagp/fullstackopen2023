@@ -20,22 +20,24 @@ Code to generate diagram:
 title Creating new note
 
 note over browser:
-when user creates a new note,
-the browser send the data to the server
+the browser send
+the data to the server
 end note
 
 browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
 
 note over browser:
-The browser do a request to the 
-server to get all notes
+The browser do a 
+request to the server
+to get all notes
 end note
 
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
 
 note over server:
-the server send a HTML document
-to the browser
+the server send a 
+HTML document to 
+the browser
 end note
 
 server-->browser: HTML-code
@@ -50,14 +52,16 @@ browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
 server-->browser: main.css
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
 server-->browser: main.js
+
+note over browser:
+the browser starts executing
+JavaScript code that request
+data from the server
+end note
+
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 server-->browser: data.json
 
-note over browser:
-finally, the browser execute
-the JavaScript code and render
-the information to the user
-end note
 ```
 
-![Creating new note](./img/creating_new_note.png "Optional title")
+![Creating new note diagram](./img/creating_new_note.png "Creating new note diagram")
