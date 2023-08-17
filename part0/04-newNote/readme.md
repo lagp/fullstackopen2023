@@ -64,4 +64,6 @@ server-->browser: data.json
 
 ```
 
+Diagram:
+
 ![Creating new note diagram](./img/creating_new_note.png "Creating new note diagram")
