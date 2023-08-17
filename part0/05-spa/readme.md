@@ -43,4 +43,6 @@ browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 server-->browser: data.json
 ```
 
+Diagram:
+
 ![Access to Single Page Application diagram](./img/access_spa.png "Access to Single Page Application diagram")
