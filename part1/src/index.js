@@ -5,7 +5,7 @@ const Title = ({text}) => <h1>{text}</h1>
 
 const Button = ({handleClick, text}) => <button onClick={handleClick}>{text}</button>
 
-const StatisticLine = ({text, value}) => <p>{text} {value}</p>
+const StatisticLine = ({text, value}) => <><td>{text}</td><td>{value}</td></>
 
 const Statics = ({good, neutral, bad}) => {
   const total = good + neutral + bad
@@ -15,12 +15,32 @@ const Statics = ({good, neutral, bad}) => {
   if (total > 0) {
   return <>
         <Title text='statics' />
-        <StatisticLine text='good' value={good} />
-        <StatisticLine text='neutral' value={neutral} />
-        <StatisticLine text='bad' value={bad} />
-        <p>all {total}</p>
-        <p>average {!isNaN(averageScore) ? averageScore : 0}</p>
-        <p>positive {!isNaN(positivePercent) ? positivePercent : 0} %</p>
+        <table>
+          <tbody>
+
+            <tr>
+              <StatisticLine text='good' value={good} />
+            </tr>
+            <tr>
+              <StatisticLine text='neutral' value={neutral} />
+            </tr>
+            <tr>
+              <StatisticLine text='bad' value={bad} />
+            </tr>
+            <tr>
+              <td>all</td>
+              <td>{total}</td>
+            </tr>
+            <tr>
+              <td>average</td>
+              <td>{!isNaN(averageScore) ? averageScore : 0}</td>
+            </tr>
+            <tr>
+              <td>positive</td>
+              <td>{!isNaN(positivePercent) ? positivePercent : 0} %</td>
+            </tr>
+          </tbody>
+        </table>
   </>
   }
 
