@@ -9,15 +9,24 @@ const Statics = ({good, neutral, bad}) => {
   const total = good + neutral + bad
   const averageScore = (good * 1 + neutral * 0 + bad * -1) / total
   const positivePercent = (good / total) * 100
-return <>
-      <Title text='statics' />
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {total}</p>
-      <p>average {!isNaN(averageScore) ? averageScore : 0}</p>
-      <p>positive {!isNaN(positivePercent) ? positivePercent : 0} %</p>
-</>
+
+  if (total > 0) {
+  return <>
+        <Title text='statics' />
+        <p>good {good}</p>
+        <p>neutral {neutral}</p>
+        <p>bad {bad}</p>
+        <p>all {total}</p>
+        <p>average {!isNaN(averageScore) ? averageScore : 0}</p>
+        <p>positive {!isNaN(positivePercent) ? positivePercent : 0} %</p>
+  </>
+  }
+
+  return <>
+    <Title text='statics' />
+    <p>No feedback given</p>
+  </>
+
 }
 
 const App = () => {
