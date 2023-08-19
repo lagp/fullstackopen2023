@@ -5,6 +5,8 @@ const Title = ({text}) => <h1>{text}</h1>
 
 const Button = ({handleClick, text}) => <button onClick={handleClick}>{text}</button>
 
+const StatisticLine = ({text, value}) => <p>{text} {value}</p>
+
 const Statics = ({good, neutral, bad}) => {
   const total = good + neutral + bad
   const averageScore = (good * 1 + neutral * 0 + bad * -1) / total
@@ -13,9 +15,9 @@ const Statics = ({good, neutral, bad}) => {
   if (total > 0) {
   return <>
         <Title text='statics' />
-        <p>good {good}</p>
-        <p>neutral {neutral}</p>
-        <p>bad {bad}</p>
+        <StatisticLine text='good' value={good} />
+        <StatisticLine text='neutral' value={neutral} />
+        <StatisticLine text='bad' value={bad} />
         <p>all {total}</p>
         <p>average {!isNaN(averageScore) ? averageScore : 0}</p>
         <p>positive {!isNaN(positivePercent) ? positivePercent : 0} %</p>
