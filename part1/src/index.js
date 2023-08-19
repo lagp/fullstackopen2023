@@ -1,55 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
-const Header = (props) => {
-  return <h1>{props.course}</h1>;
-};
+const Title = ({text}) => <h1>{text}</h1>
 
-const Content = (props) => {
-  return (
-    <>
-      <p>
-        {props.parts[0].name} {props.parts[0].exercises}
-      </p>
-      <p>
-        {props.parts[1].name} {props.parts[1].exercises}
-      </p>
-      <p>
-        {props.parts[2].name} {props.parts[2].exercises}
-      </p>
-    </>
-  );
-};
+const Button = ({handleClick, text}) => <button onClick={handleClick}>{text}</button>
 
-const Total = (props) => {
-  const total = props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises;
-  return <p>Number of exercices {total}</p>;
-};
+const Statics = ({good, neutral, bad}) => {
+return <>
+      <Title text='statics' />
+      <p>good {good}</p>
+      <p>neutral {neutral}</p>
+      <p>bad {bad}</p>
+</>
+}
 
 const App = () => {
-  const course = {
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10,
-      },
-      {
-        name: 'Using props to passs data',
-        exercises: 7,
-      },
-      {
-        name: 'State of a component',
-        exercises: 14,
-      },
-    ]
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
+
+  const handleGoodClick = () => {
+    const newValue = good + 1;
+    setGood(newValue)
+  }
+
+  const handleNeutralClick = () => {
+    setNeutral(neutral + 1)
+  }
+  const handleBadClick = () => {
+    setBad(bad + 1)
   }
 
   return (
     <div>
-      <Header course={course.name} />
-      <Content parts={course.parts} />
-      <Total parts={course.parts} />
+      <Title text='give feedback' />
+      <Button handleClick={handleGoodClick} text='good' />
+      <Button handleClick={handleNeutralClick} text='neutral' />
+      <Button handleClick={handleBadClick} text='bad' />
+      <Statics good={good} neutral={neutral} bad={bad} />
     </div>
   );
 };
