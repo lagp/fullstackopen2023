@@ -18,8 +18,29 @@ const App = (props) => {
     setSelected(index)
   }
 
+  let max = votes[0]
+  let index = 0
+  for (let i = 0; i < votes.length; i++) {
+    if (votes[i] > max) {
+      max = votes[i]
+      index = i
+    }
+  }
+
+  let mostVotedAnecdote = <></>;
+
+  if (max > 0) {
+    mostVotedAnecdote = <>
+      <h1>Anecdote with most votes</h1>
+      {anecdotes[index]}
+      <br />
+      hash {max} votes
+    </>
+  }
+
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       {props.anecdotes[selected]}
       <br />
       has {votes[selected]} votes
@@ -27,6 +48,7 @@ const App = (props) => {
         <button onClick={handleVoteClick}>vote</button>
         <button onClick={handleNextAnecdotesClick}>next anecdotes</button>
       </p>
+      {mostVotedAnecdote}
     </div>
   )
 
